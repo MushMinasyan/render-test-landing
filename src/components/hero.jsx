@@ -1,41 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/App.css";
+import ImageSelector from "./imageSelector";
+import media from "./imagesData"; // Импортируем массив с изображениями и видео
 
 export default function Hero() {
-  const images = [
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-1.avif&w=64&q=75",
-      alt: "Avatar 1",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-2.avif&w=64&q=75",
-      alt: "Avatar 2",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-3.avif&w=64&q=75",
-      alt: "Avatar 3",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-4-new.avif&w=64&q=75",
-      alt: "Avatar 4",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-5.avif&w=64&q=75",
-      alt: "Avatar 5",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-6.avif&w=64&q=75",
-      alt: "Avatar 6",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-7.avif&w=64&q=75",
-      alt: "Avatar 7",
-    },
-    {
-      src: "https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fai-cartoon-generator%2Favatar-8.avif&w=64&q=75",
-      alt: "Avatar 8",
-    },
-  ];
+  const [videoSrc, setVideoSrc] = useState(media[0].video); // Начальное видео
 
   return (
     <div className="hero-container">
@@ -58,35 +27,26 @@ export default function Hero() {
               className="hero-form-input"
             />
             <button className="hero-button">
-              {" "}
-              <span>Create AI Cartoon </span>
+              <span>Create AI Cartoon</span>
             </button>
           </div>
         </div>
       </div>
       <div className="right-content">
-        <div className="rollin-images-div">
-          <p>Style</p>
-          <div className="hero-rounds"></div>
-          {images.map((image, index) => (
-            <div key={index}>
-              <img src={image.src} alt={image.alt} />
-            </div>
-          ))}
-        </div>
+        <ImageSelector images={media} onImageSelect={setVideoSrc} />
         <div className="video-container">
           <h3>Find Your Cartoon Character</h3>
           <div>
             <video
-              src="https://videostatic.rfstat.com/landing/single-landing/cartoon-hero-video-8-1.mp4"
+              src={videoSrc}
               autoPlay
               loop
               muted
               playsInline
+              key={videoSrc} // Обновляем видео при изменении src
             />
           </div>
           <a href="https://www.renderforest.com/project/ai-video">
-            {" "}
             Create AI Cartoon
           </a>
         </div>
