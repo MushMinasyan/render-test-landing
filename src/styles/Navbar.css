@@ -70,7 +70,7 @@
   opacity: 0.8;
 }
 
-.navlink {
+.navLink {
   text-decoration: none;
   color: #545f7e;
   padding: 10px 15px;
@@ -79,7 +79,7 @@
   cursor: pointer;
 }
 
-.navlink-pricing {
+.navLink-pricing {
   text-decoration: none;
   color: #545f7e;
   padding: 10px 15px;
@@ -87,7 +87,7 @@
   position: relative;
 }
 
-.navlink::after {
+.navLink::after {
   content: "";
   position: absolute;
   right: -5px;
@@ -99,7 +99,7 @@
   transition: transform 0.3s ease;
 }
 
-.navlink:hover::after {
+.navLink:hover::after {
   transform: translateY(-50%) rotate(180deg);
 }
 

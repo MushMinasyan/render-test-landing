@@ -6,7 +6,6 @@
   }
 }
 .hero-section {
-  margin-bottom: 20px;
   background-color: #faf8f4;
   position: relative;
 }
@@ -278,24 +277,6 @@
   margin-bottom: 20px;
 }
 
-.trusted-wrapper p::before {
-  background-image: linear-gradient(270deg, #c1c9e0, rgba(193, 201, 224, 0));
-  content: "";
-  display: inline-block;
-  flex-grow: 1;
-  height: 1px;
-  width: 100%;
-}
-
-.trusted-wrapper p::after {
-  background-image: linear-gradient(90deg, #c1c9e0, rgba(193, 201, 224, 0));
-  content: "";
-  display: inline-block;
-  flex-grow: 1;
-  height: 1px;
-  width: 100%;
-}
-
 .trusted-wrapper p {
   font-weight: 500;
   font-size: 16px;
@@ -339,10 +320,6 @@
   border: 3px solid transparent;
 }
 
-.image-selector-item:hover {
-  transform: scale(1.1);
-}
-
 .image-selector-item.active {
   border-color: rgba(73, 90, 95, 0.784);
 }
@@ -352,4 +329,162 @@
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* page 2 */
+
+.generate-steps-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px 16px;
+}
+.generate-steps-section-first-p {
+  margin-bottom: 56px;
+}
+.generate-steps-container {
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.generate-steps-container h2 {
+  padding: 48px 0 16px;
+  color: #252e48;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.3;
+}
+.generate-steps-container span {
+  background: linear-gradient(135deg, #bc87f6, #4235e5 50%, #bc87f6);
+  background-size: 200% auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline;
+  animation: shine 4s linear infinite;
+  animation-delay: 1s;
+}
+.generate-steps-container p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.generate-item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 112px;
+}
+.generate-step-box {
+  width: 96%;
+  padding: 24px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 16px;
+  background-color: #fef7e5;
+  border-color: #f4e7c1;
+}
+.generate-step-box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  object-fit: fill;
+}
+.step-one .generate-box-number {
+  background-color: #f6d669;
+}
+.title-number-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.generate-step-box p {
+  color: #252e48;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.step-one .generate-step-box::before {
+  right: 0;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/generate-step-arrow.avif);
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transform: translate(100%, -100%);
+}
+.step-two .generate-step-box {
+  background-color: #ffeefc;
+  border-color: #fbd2ff;
+}
+.step-two .generate-box-number {
+  background-color: #f0a8f7;
+}
+
+.step-two .generate-step-box::before {
+  left: 0;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/generate-step-arrow.avif);
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transform: translate(-100%, -100%) scaleX(-1);
+}
+
+.step-three .generate-step-box {
+  background-color: #e4fef8;
+  border-color: #bfe6dd;
+}
+.step-three .generate-box-number {
+  background-color: #84cdbc;
+}
+.generate-box-number {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.link-primary-button {
+  margin-top: 55px;
+  display: inline-block;
+  line-height: 50px;
+  padding: 0 30px;
+  height: 52px;
+  min-width: 100px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(180deg, #8980f7, #4136c1);
+  box-shadow: 0 6px 12px 0 rgba(118, 109, 232, 0.4);
+  transition: all 0.2s ease;
+}
+.link-primary-button:hover {
+  background: linear-gradient(180deg, #695ef3, #2318a5);
+  box-shadow: 0 6px 12px 0 rgba(118, 109, 232, 0.4);
 }

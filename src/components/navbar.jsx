@@ -61,7 +61,7 @@ const Navbar = () => {
 
         {navItems.map((item) => (
           <div key={item.to} className="dropdown">
-            <p to={item.to} className="navlink">
+            <p to={item.to} className="navLink">
               {item.label}
             </p>
             <div className="dropdown-content">
@@ -76,11 +76,11 @@ const Navbar = () => {
       </div>
 
       <div className="end-links">
-        <p to="/pricing" className="navlink-pricing">
+        <p to="/pricing" className="navLink-pricing">
           Pricing
         </p>
         <div className="dropdown">
-          <p to="#" className="navlink">
+          <p to="#" className="navLink">
             Learn
           </p>
           <div className="dropdown-content">
@@ -91,7 +91,7 @@ const Navbar = () => {
         </div>
 
         <div className="dropdown">
-          <p to="#" className="navlink">
+          <p to="#" className="navLink">
             Languages
           </p>
           <div className="dropdown-content">

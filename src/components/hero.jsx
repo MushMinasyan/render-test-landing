@@ -16,7 +16,7 @@ export default function Hero() {
               <span className="title-span2"> Generator</span>
             </h1>
             <p className="hero-about">
-              Renderforest's AI Cartoon Generator lets you transform your
+              Renderforest`s AI Cartoon Generator lets you transform your
               creative ideas into cartoons in no time. Our AI-driven platform
               simplifies the animation process, allowing you to bring your
               vision to life with ease and precision.
