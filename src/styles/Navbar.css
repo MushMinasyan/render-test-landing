@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-bottom: 1px solid #ddd;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .navlink:hover::after {
-  transform: translateY(-50%) rotate(180deg); /* Поворот треугольника */
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .dropdown {
