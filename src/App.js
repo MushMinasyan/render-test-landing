@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import GenerateStepsContainer from "./components/generateStepsContainer";
 import GenerateSection from "./components/generateSection";
+import CharactersSection from "./components/charactersSection";
 const App = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const App = () => {
       <Hero />
       <GenerateStepsContainer />
       <GenerateSection />
+      <CharactersSection />
     </>
   );
 };
