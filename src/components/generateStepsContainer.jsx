@@ -1,4 +1,4 @@
-export default function GenerateStepsContainer() {
+const GenerateStepsContainer = () => {
   const steps = [
     {
       id: 1,
@@ -89,4 +89,5 @@ export default function GenerateStepsContainer() {
       </a>
     </section>
   );
-}
+};
+export default GenerateStepsContainer;
