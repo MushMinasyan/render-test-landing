@@ -5,6 +5,7 @@ import Hero from "./components/hero";
 import GenerateStepsContainer from "./components/generateStepsContainer";
 import GenerateSection from "./components/generateSection";
 import CharactersSection from "./components/charactersSection";
+import PopularSection from "./components/popularSection";
 const App = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const App = () => {
       <GenerateStepsContainer />
       <GenerateSection />
       <CharactersSection />
+      <PopularSection />
     </>
   );
 };
