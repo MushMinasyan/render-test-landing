@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/generate-section.css";
 const data = [
   {
     title: "AI-Powered Prompt-to-Cartoon Conversion",

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/popular-section.css";
 const popularData = [
   {
     id: 1,

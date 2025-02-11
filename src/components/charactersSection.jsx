@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/App.css"; // Подключаем стили
+import "../styles/character-section.css";
 
 const charactersData = [
   {

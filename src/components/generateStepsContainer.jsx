@@ -1,3 +1,4 @@
+import "../styles/generate-steps-section.css";
 const GenerateStepsContainer = () => {
   const steps = [
     {

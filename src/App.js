@@ -6,6 +6,7 @@ import GenerateStepsContainer from "./components/generateStepsContainer";
 import GenerateSection from "./components/generateSection";
 import CharactersSection from "./components/charactersSection";
 import PopularSection from "./components/popularSection";
+import AdvantagesSection from "./components/advantagesSection";
 const App = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
       <GenerateSection />
       <CharactersSection />
       <PopularSection />
+      <AdvantagesSection />
     </>
   );
 };
