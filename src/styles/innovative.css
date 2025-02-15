@@ -1,0 +1,166 @@
+/* page 7 */
+.innovative-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 48px 0;
+}
+.innovative-section h2 {
+  max-width: 900px;
+  margin-bottom: 56px;
+}
+.innovative-container {
+  width: 96%;
+  max-width: 1560px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.image-title h3 {
+  text-align: center;
+  max-width: 350px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.innovative-section span {
+  background: linear-gradient(135deg, #bc87f6, #4235e5 50%, #bc87f6);
+  background-size: 200% auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline;
+  animation: shine 4s linear infinite;
+  animation-delay: 1s;
+}
+.innovative-content {
+  display: flex;
+  padding: 0 20px;
+  flex-direction: row;
+  gap: 32px;
+}
+.iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+.innovative-left {
+  display: flex;
+  justify-content: center;
+}
+.innovative-left-div::before {
+  content: "";
+  position: absolute;
+  top: -65px;
+  left: -170px;
+  background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/innovative-chips.avif);
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  width: 208px;
+  height: 156px;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  transform-origin: right;
+  animation: shake 3s ease-in-out infinite alternate;
+}
+.innovative-left-div {
+  width: 780px;
+  height: 400px;
+  max-width: 86%;
+  position: relative;
+  border-radius: 26px;
+  border: 7px solid #fff;
+  outline: 1px solid #d7beeb;
+}
+
+.image-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.image-title p {
+  color: #252e48;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.image-title img {
+  width: 32px;
+  aspect-ratio: auto 32 / 32;
+  height: 32px;
+}
+
+.innovative-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.innovative-box {
+  gap: 11px;
+}
+.innovative-box h3 {
+  font-size: 18px;
+}
+.innovative-box img {
+  margin: 0;
+
+  width: 32px;
+  height: 32px;
+}
+
+.innovative-content2 {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px 16px 16px 24px;
+}
+
+.innovative-box h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.innovative-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.box-1 {
+  background: #ffeefc;
+  border: 1px solid #fbd2ff;
+}
+
+.box-2 {
+  background: #fef7e5;
+  border: 1px solid #f0d9d5;
+}
+
+.box-3 {
+  background: #dafff6;
+  border: 1px solid #bfe6dd;
+}
+
+.box-4 {
+  background: #f0ebff;
+  border: 1px solid #d7beeb;
+}
+
+.box-5 {
+  background: #ebf4ff;
+  border: 1px solid #a3c9f6;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6px;
+  gap: 16px;
+}

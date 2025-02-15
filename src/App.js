@@ -7,6 +7,8 @@ import GenerateSection from "./components/generateSection";
 import CharactersSection from "./components/charactersSection";
 import PopularSection from "./components/popularSection";
 import AdvantagesSection from "./components/advantagesSection";
+import Innovative from "./components/innovative";
+import Review from "./components/review";
 const App = () => {
   return (
     <>
@@ -17,6 +19,8 @@ const App = () => {
       <CharactersSection />
       <PopularSection />
       <AdvantagesSection />
+      <Innovative />
+      <Review />
     </>
   );
 };
