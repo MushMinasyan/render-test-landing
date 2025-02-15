@@ -1,0 +1,84 @@
+/* page 9 */
+.more-section {
+  margin: 48px 0;
+}
+.more-container {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/more-background.avif);
+  background-size: 100% 100%;
+  background-position: 50%;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.more-container h2 {
+  margin-bottom: 56px;
+}
+.more-items {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+}
+.more-item {
+  background: #f3f1ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.more-item a {
+  color: #8980f7;
+  font-weight: 200;
+  text-wrap: wrap;
+  text-align: center;
+  background: #f3f1ff;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.more-item p {
+  font-size: 18px;
+  padding: 20px 34px;
+  color: #8980f7;
+  font-weight: 200;
+  text-wrap: wrap;
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.more-item::after {
+  content: "";
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background: #8980f7;
+  border-radius: 11px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  transition: 0.1s;
+}
+.more-item:hover::after {
+  background: linear-gradient(
+    270deg,
+    #ff39a7,
+    #e265af 34%,
+    #9f5de6 65%,
+    #655be2
+  );
+}
