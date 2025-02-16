@@ -11,6 +11,8 @@ import Innovative from "./components/innovative";
 import Review from "./components/review";
 import MoreSection from "./components/moreSection";
 import FaqSection from "./components/faqSection";
+import FooterSubScrip from "./components/footerSubScrip";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
@@ -26,6 +28,10 @@ const App = () => {
         <Review />
         <MoreSection />
         <FaqSection />
+        <footer>
+          <FooterSubScrip />
+          <Footer />
+        </footer>
       </main>
     </>
   );

@@ -163,7 +163,7 @@ h3 {
   background-size: cover;
   background-position: 50%;
 }
-.icon-box3 {
+.icon-box3 img {
   animation: rotateStar 5s ease-in infinite;
 }
 @keyframes rotateStar {
