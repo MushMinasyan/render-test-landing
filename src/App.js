@@ -13,6 +13,8 @@ import MoreSection from "./components/moreSection";
 import FaqSection from "./components/faqSection";
 import FooterSubScrip from "./components/footerSubScrip";
 import Footer from "./components/Footer";
+import "./styles/media.css";
+import "./styles/App.css";
 const App = () => {
   return (
     <>

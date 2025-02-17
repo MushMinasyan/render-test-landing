@@ -55,61 +55,63 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navbar">
-      <div className="navbar-links">
-        <img className="logo" src="/download.png" alt="logo" />
+    <header className="main-header">
+      <div className="navbar">
+        <div className="navbar-links">
+          <img className="logo" src="/download.png" alt="logo" />
 
-        {navItems.map((item) => (
-          <div key={item.to} className="dropdown">
-            <p to={item.to} className="navLink">
-              {item.label}
+          {navItems.map((item) => (
+            <div key={item.to} className="dropdown">
+              <p to={item.to} className="navLink">
+                {item.label}
+              </p>
+              <div className="dropdown-content">
+                {item.subItems.map((subItem) => (
+                  <p key={subItem.to} to={subItem.to}>
+                    {subItem.label}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="end-links">
+          <p to="/pricing" className="navLink-pricing">
+            Pricing
+          </p>
+          <div className="dropdown">
+            <p to="#" className="navLink">
+              Learn
             </p>
             <div className="dropdown-content">
-              {item.subItems.map((subItem) => (
-                <p key={subItem.to} to={subItem.to}>
-                  {subItem.label}
-                </p>
-              ))}
+              <p to="/tutorials">Tutorials</p>
+              <p to="/guides">Guides</p>
+              <p to="/docs">Docs</p>
             </div>
           </div>
-        ))}
-      </div>
 
-      <div className="end-links">
-        <p to="/pricing" className="navLink-pricing">
-          Pricing
-        </p>
-        <div className="dropdown">
-          <p to="#" className="navLink">
-            Learn
-          </p>
-          <div className="dropdown-content">
-            <p to="/tutorials">Tutorials</p>
-            <p to="/guides">Guides</p>
-            <p to="/docs">Docs</p>
+          <div className="dropdown">
+            <p to="#" className="navLink">
+              Languages
+            </p>
+            <div className="dropdown-content">
+              <p to="/english">English</p>
+              <p to="/spanish">Spanish</p>
+              <p to="/french">French</p>
+            </div>
           </div>
-        </div>
 
-        <div className="dropdown">
-          <p to="#" className="navLink">
-            Languages
+          <p to="/signin" className="button sign-in">
+            Sign In
           </p>
-          <div className="dropdown-content">
-            <p to="/english">English</p>
-            <p to="/spanish">Spanish</p>
-            <p to="/french">French</p>
-          </div>
+
+          <p to="/try-for-free" className="button try-for-free">
+            Try for Free
+          </p>
         </div>
-
-        <p to="/signin" className="button sign-in">
-          Sign In
-        </p>
-
-        <p to="/try-for-free" className="button try-for-free">
-          Try for Free
-        </p>
       </div>
-    </div>
+    </header>
   );
 };
 

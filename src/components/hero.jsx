@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/App.css";
+import "../styles/media.css";
 import ImageSelector from "./imageSelector";
-import media from "./imagesData";
 
 export default function Hero() {
-  const [videoSrc, setVideoSrc] = useState(media[0].video);
+  const [media, setMedia] = useState([]);
+  const [videoSrc, setVideoSrc] = useState(null);
+
+  useEffect(() => {
+    // Динамический импорт imagesData.js
+    const loadMedia = async () => {
+      const mediaModule = await import("./imagesData");
+      setMedia(mediaModule.default);
+      setVideoSrc(mediaModule.default[0]?.video || ""); // Устанавливаем начальное видео
+    };
+
+    loadMedia();
+  }, []);
 
   return (
     <section className="hero-section">
@@ -15,7 +27,7 @@ export default function Hero() {
             <span className="title-span2"> Generator</span>
           </h1>
           <p className="hero-about">
-            Renderforest`s AI Cartoon Generator lets you transform your creative
+            Renderforest's AI Cartoon Generator lets you transform your creative
             ideas into cartoons in no time. Our AI-driven platform simplifies
             the animation process, allowing you to bring your vision to life
             with ease and precision.
@@ -34,23 +46,30 @@ export default function Hero() {
           </div>
         </div>
         <div className="right-content">
-          <ImageSelector images={media} onImageSelect={setVideoSrc} />
-          <div className="video-container">
-            <h3>Find Your Cartoon Character</h3>
-            <div className="video">
-              <video
-                src={videoSrc}
-                autoPlay
-                loop
-                muted
-                playsInline
-                key={videoSrc}
-              />
-            </div>
-            <a href="https://www.renderforest.com/project/ai-video">
-              Create AI Cartoon
-            </a>
-          </div>
+          {media.length > 0 ? (
+            <>
+              <ImageSelector images={media} onImageSelect={setVideoSrc} />
+              <div className="video-container">
+                <h3>Find Your Cartoon Character</h3>
+                <div className="video">
+                  <video
+                    src={videoSrc}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    key={videoSrc}
+                  />
+                </div>
+                <a href="https://www.renderforest.com/project/ai-video">
+                  Create AI Cartoon
+                </a>
+              </div>
+            </>
+          ) : (
+            <p>Loading media...</p>
+          )}
         </div>
       </div>
       <section className="trusted">
@@ -81,7 +100,7 @@ export default function Hero() {
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fhootsuite-logo.webp&w=256&q=75"
-            alt="  img5"
+            alt="img5"
           />
         </div>
       </section>

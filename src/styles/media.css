@@ -1,0 +1,129 @@
+@media only screen and (min-width: 1441px) {
+  .hero-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    z-index: 1;
+    gap: 72px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .hero-container {
+    padding: 72px 20px 48px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-form {
+    margin-bottom: 94px;
+    flex-direction: column;
+    width: 550px;
+    max-width: 100%;
+    border-radius: 12px;
+    border: 4px solid #e9e7fc;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .hero-search {
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  .title:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 96px;
+    height: 102px;
+    transform: translate(120%, -35%);
+    background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/pattern.avif);
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 72px;
+  }
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    gap: 40px;
+  }
+  .hero-form {
+    width: 325px;
+  }
+
+  .hero-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #8980f7;
+    outline: 8px solid #fff;
+    box-shadow: 0 4px 16px rgba(56, 102, 255, 0.149);
+    width: 325px;
+    gap: 20px;
+  }
+  .hero-form-input {
+  }
+  .right-content {
+    max-width: 564px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 4px;
+  }
+  .video-container {
+    width: 266px;
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid #c1c9e0;
+    background-color: #fff;
+  }
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .title {
+    padding-left: 18px;
+    text-align: center;
+    font-size: 32px;
+    margin: 0;
+  }
+  .hero-about {
+    width: 400px;
+    text-align: center;
+  }
+  .hero-button {
+    top: unset;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    height: 56px;
+  }
+}
