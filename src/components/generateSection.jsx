@@ -84,7 +84,7 @@ const GenerateSection = () => {
                 <p>{item.description}</p>
               </div>
               <div className="generate-image-content">
-                <img src={item.imgUrl} alt="img" />
+                <img src={item.imgUrl} alt="img" loading="lazy" />
               </div>
             </div>
           ))}

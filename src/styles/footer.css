@@ -1,14 +1,15 @@
 .Footer-navigation {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px auto 14px;
-  justify-content: center;
   background-color: #faf8f4;
   width: 100%;
   max-width: 1769px;
   padding: 0 14px;
 }
 ul {
+  width: 140px;
   list-style-type: none;
 }
 .links-item p {
@@ -40,9 +41,12 @@ ul {
   transition: color 0.3s ease;
   white-space: nowrap;
 }
+.links-content {
+  display: flex;
+  flex-direction: column;
+}
 .links-item {
   gap: 150px;
-  display: flex;
   margin-bottom: 10px;
   padding: 0 8px;
   display: flex;
@@ -57,7 +61,7 @@ ul {
 
 .links-content ul li a {
   display: block;
-  padding: 10px;
+  padding-bottom: 10px;
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
@@ -78,4 +82,43 @@ ul {
 
 .links-content ul li:hover::after {
   transform: scaleX(1);
+}
+.see-more {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #252e48;
+}
+.stores-icons-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 360px;
+}
+figure {
+  height: 40px;
+  position: relative;
+  width: 132px;
+  cursor: pointer;
+}
+.stores-icons-div figure {
+  position: relative;
+  display: inline-block;
+  width: 150px; /* Размер кнопки */
+}
+
+.stores-icons-div figure img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Скрываем второе изображение */
+}
+
+.stores-icons-div figure:hover img:last-child {
+  opacity: 1; /* Показываем при наведении */
+}
+
+.stores-icons-div figure:hover img:first-child {
+  opacity: 0; /* Скрываем первое изображение */
 }

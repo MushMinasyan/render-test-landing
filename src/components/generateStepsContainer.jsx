@@ -46,10 +46,17 @@ const GenerateStepsContainer = () => {
             // For the second step, swap the video and text block
             <>
               <div className="generate-box-video">
-                <video src={step.video} autoPlay loop muted playsInline />
+                <video
+                  src={step.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  loading="lazy"
+                />
               </div>
               <div className="generate-step-box">
-                <img src={step.img} alt="itemPhoto" />
+                <img src={step.img} alt="itemPhoto" loading="lazy" />
                 <div>
                   <div className="title-number-container">
                     <div className="generate-box-number">
@@ -64,7 +71,7 @@ const GenerateStepsContainer = () => {
           ) : (
             <>
               <div className="generate-step-box">
-                <img src={step.img} alt="itemPhoto" />
+                <img src={step.img} alt="itemPhoto" loading="lazy" />
                 <div>
                   <div className="title-number-container">
                     <div className="generate-box-number">
@@ -76,7 +83,14 @@ const GenerateStepsContainer = () => {
                 </div>
               </div>
               <div className="generate-box-video">
-                <video src={step.video} autoPlay loop muted playsInline />
+                <video
+                  src={step.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  loading="lazy"
+                />
               </div>
             </>
           )}
@@ -91,4 +105,5 @@ const GenerateStepsContainer = () => {
     </section>
   );
 };
+
 export default GenerateStepsContainer;

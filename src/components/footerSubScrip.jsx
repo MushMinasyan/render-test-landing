@@ -9,7 +9,7 @@ const FooterSubScrip = () => {
         <div className="input-area">
           <form className="subscription-form">
             <div className="input-group">
-              <label htmlFor="" className="input-label">
+              <label className="input-label">
                 <div className="input-icon">
                   <svg xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 18.575c0-2.722 3.686-3.4 8-3.4 4.339 0 8 .7 8 3.424S16.315 22 12 22c-4.338 0-8-.7-8-3.425M6.706 7.291A5.294 5.294 0 1 1 12 12.583a5.274 5.274 0 0 1-5.294-5.292"></path>
@@ -20,7 +20,7 @@ const FooterSubScrip = () => {
                   placeholder="Enter your name"
                 />
               </label>
-              <label htmlFor="" className="input-label">
+              <label className="input-label">
                 <div className="input-icon">
                   {" "}
                   <svg xmlns="http://www.w3.org/2000/svg">

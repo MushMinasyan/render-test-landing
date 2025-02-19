@@ -15,6 +15,7 @@ import FooterSubScrip from "./components/footerSubScrip";
 import Footer from "./components/Footer";
 import "./styles/media.css";
 import "./styles/App.css";
+import FooterSocial from "./components/footerSocial";
 const App = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const App = () => {
         <footer>
           <FooterSubScrip />
           <Footer />
+          <FooterSocial />
         </footer>
       </main>
     </>

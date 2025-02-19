@@ -78,6 +78,7 @@ const CharactersSection = () => {
                   src={character.img}
                   alt={character.title}
                   className="character-img"
+                  loading="lazy"
                 />
                 <video
                   src={character.video}
@@ -85,6 +86,7 @@ const CharactersSection = () => {
                   autoPlay
                   loop
                   muted
+                  loading="lazy"
                 />
               </div>
               <p className="character-item-title">{character.title}</p>

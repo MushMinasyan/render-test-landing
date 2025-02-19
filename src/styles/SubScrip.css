@@ -80,12 +80,12 @@
 .subscription-input2 {
   width: 260px;
 }
-input-icon:focus {
+.input-icon:focus {
   border-color: #3271e6;
   box-shadow: 0 0 12px rgba(50, 113, 230, 0.502);
   background-color: #3271e6;
 }
-svg {
+.input-icon svg {
   width: 24px;
   height: 24px;
   fill: #7683a8;
