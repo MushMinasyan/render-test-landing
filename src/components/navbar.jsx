@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -48,8 +49,10 @@ const Navbar = () => {
       label: "Explore AI",
       to: "/explore-ai",
       subItems: [
-        { label: "AI Tools", to: "/ai-tools" },
-        { label: "AI Projects", to: "/ai-projects" },
+        { label: "AI Video Generator", to: "/VideoGenerator" },
+        { label: "Text to video Ai", to: "/ai-projects" },
+        { label: "Ai Animation Generator", to: "/AnimationGenerator" },
+        { label: "Ai Carton Generator", to: "/" },
       ],
     },
   ];
@@ -58,18 +61,24 @@ const Navbar = () => {
     <header className="main-header">
       <div className="navbar">
         <div className="navbar-links">
-          <img className="logo" src="/download.png" alt="logo" />
+          <NavLink to="/">
+            <img className="logo" src="/download.png" alt="logo" />
+          </NavLink>
 
           {navItems.map((item) => (
             <div key={item.to} className="dropdown">
-              <p to={item.to} className="navLink">
+              <NavLink to={item.to} className="navLink">
                 {item.label}
-              </p>
+              </NavLink>
               <div className="dropdown-content">
                 {item.subItems.map((subItem) => (
-                  <p key={subItem.to} to={subItem.to}>
+                  <NavLink
+                    key={subItem.to}
+                    to={subItem.to}
+                    className="dropdown-item"
+                  >
                     {subItem.label}
-                  </p>
+                  </NavLink>
                 ))}
               </div>
             </div>
@@ -77,38 +86,35 @@ const Navbar = () => {
         </div>
 
         <div className="end-links">
-          <p to="/pricing" className="navLink-pricing">
+          <NavLink to="/pricing" className="navLink-pricing">
             Pricing
-          </p>
+          </NavLink>
+
           <div className="dropdown">
-            <p to="#" className="navLink">
-              Learn
-            </p>
+            <p className="navLink">Learn</p>
             <div className="dropdown-content">
-              <p to="/tutorials">Tutorials</p>
-              <p to="/guides">Guides</p>
-              <p to="/docs">Docs</p>
+              <NavLink to="/tutorials">Tutorials</NavLink>
+              <NavLink to="/guides">Guides</NavLink>
+              <NavLink to="/docs">Docs</NavLink>
             </div>
           </div>
 
           <div className="dropdown">
-            <p to="#" className="navLink">
-              Languages
-            </p>
+            <p className="navLink">Languages</p>
             <div className="dropdown-content">
-              <p to="/english">English</p>
-              <p to="/spanish">Spanish</p>
-              <p to="/french">French</p>
+              <NavLink to="/english">English</NavLink>
+              <NavLink to="/spanish">Spanish</NavLink>
+              <NavLink to="/french">French</NavLink>
             </div>
           </div>
 
-          <p to="/signin" className="button sign-in">
+          <NavLink to="/signin" className="button sign-in">
             Sign In
-          </p>
+          </NavLink>
 
-          <p to="/try-for-free" className="button try-for-free">
+          <NavLink to="/try-for-free" className="button try-for-free">
             Try for Free
-          </p>
+          </NavLink>
         </div>
       </div>
     </header>

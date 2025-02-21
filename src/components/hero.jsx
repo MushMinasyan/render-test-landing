@@ -8,11 +8,10 @@ export default function Hero() {
   const [videoSrc, setVideoSrc] = useState(null);
 
   useEffect(() => {
-    // Динамический импорт imagesData.js
     const loadMedia = async () => {
       const mediaModule = await import("./imagesData");
       setMedia(mediaModule.default);
-      setVideoSrc(mediaModule.default[0]?.video || ""); // Устанавливаем начальное видео
+      setVideoSrc(mediaModule.default[0]?.video || "");
     };
 
     loadMedia();

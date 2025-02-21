@@ -11,6 +11,10 @@ body {
   box-sizing: border-box;
   font-family: var(--font-montserrat) !important;
 }
+.main-wrap {
+  background-color: #fff;
+  overflow: clip;
+}
 a,
 abbr,
 acronym,
