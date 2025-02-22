@@ -1,11 +1,10 @@
 @media only screen and (min-width: 1441px) {
   .hero-container {
     width: 100%;
-    margin: 0 auto;
     padding: 40px 16px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    height: auto;
     position: relative;
     align-items: center;
     z-index: 1;
@@ -60,13 +59,16 @@
     align-items: center;
     gap: 72px;
   }
+  @media only screen and (min-width: 1441px) {
+    .left-content {
+      align-items: flex-start;
+    }
+  }
   .left-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: 900px;
-    gap: 40px;
   }
   .hero-form {
     width: 325px;
@@ -125,5 +127,26 @@
     left: 0;
     right: 0;
     height: 56px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .title {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  [dir="ltr"] .hero-about {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .hero-about {
+    margin-bottom: 56px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .right-content {
+    /* order: 2; */
+    border-radius: 24px;
   }
 }
