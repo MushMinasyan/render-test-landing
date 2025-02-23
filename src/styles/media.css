@@ -35,11 +35,10 @@
 }
 
 @media only screen and (min-width: 1441px) {
-  .title:before {
+  .title::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 61%;
     width: 96px;
     height: 102px;
     transform: translate(120%, -35%);
@@ -85,8 +84,7 @@
     width: 325px;
     gap: 20px;
   }
-  .hero-form-input {
-  }
+
   .right-content {
     max-width: 564px;
     width: 100%;

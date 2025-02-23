@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import Hero from "../components/hero";
 import GenerateStepsContainer from "../components/generateStepsContainer";

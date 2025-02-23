@@ -56,7 +56,7 @@ const CharactersSection = () => {
   return (
     <div className="character-section">
       <div className="characters-container">
-        <h2>
+        <h2 className="characters-container-title">
           Explore a Wide Range of <span>Cartoon Characters</span>
         </h2>
         <p>

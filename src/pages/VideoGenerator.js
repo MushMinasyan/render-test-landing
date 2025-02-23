@@ -1,4 +1,11 @@
 import React from "react";
-export default function VideoGenerator() {
-  return <div>VideoGenerator</div>;
-}
+import VdGenHero from "../components/videoGenerator/vdGenHero";
+
+const VideoGenerator = () => {
+  return (
+    <>
+      <VdGenHero />
+    </>
+  );
+};
+export default VideoGenerator;
