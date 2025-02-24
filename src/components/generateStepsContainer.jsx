@@ -62,7 +62,7 @@ const GenerateStepsContainer = () => {
                     <div className="generate-box-number">
                       <h3>{step.id}</h3>
                     </div>
-                    <h3>{step.title}</h3>
+                    <h3 className="box-title">{step.title}</h3>
                   </div>
                   <p>{step.text}</p>
                 </div>
@@ -77,7 +77,7 @@ const GenerateStepsContainer = () => {
                     <div className="generate-box-number">
                       <h3>{step.id}</h3>
                     </div>
-                    <h3>{step.title}</h3>
+                    <h3 className="box-title">{step.title}</h3>
                   </div>
                   <p>{step.text}</p>
                 </div>

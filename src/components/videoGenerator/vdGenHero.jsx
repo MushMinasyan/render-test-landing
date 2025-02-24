@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/VideoGenerator page styles/vdGenHero.css";
+import "../../styles/video-generator-styles/vdGenHero.css";
 
 export default function VdGenHero() {
   return (
