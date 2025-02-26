@@ -37,7 +37,7 @@ export default function PopularSection() {
               <div className={`icon-box icon-box${item.id}`}>
                 <img alt="icon" src={item.icon} />
               </div>
-              <h3>{item.number}</h3>
+              <h3 className="popular-card-h3">{item.number}</h3>
               <p>{item.text}</p>
             </div>
           ))}

@@ -1,6 +1,5 @@
 .advantages-section {
   padding: 96px 10px;
-  margin: 96px 0;
   background-color: #9fd0fd;
 }
 .advantages-container {
@@ -14,20 +13,22 @@
   padding: 56px 85px;
   border-radius: 32px;
 }
-.advantages-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/chips.png);
-  background-size: contain;
-  background-position: 50%;
-  width: 220px;
-  height: 186px;
-  opacity: 1;
-  transform: translate(40%, -10%);
-  transform-origin: left;
-  animation: shake 1s ease-in-out infinite alternate;
+@media only screen and (min-width: 932px) {
+  .advantages-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(https://static.rfstat.com/renderforest/images/v2/landing-pics/ai-cartoon-generator/chips.png);
+    background-size: contain;
+    background-position: 50%;
+    width: 220px;
+    height: 186px;
+    opacity: 1;
+    transform: translate(40%, -10%);
+    transform-origin: left;
+    animation: shake 1s ease-in-out infinite alternate;
+  }
 }
 @keyframes shake {
   0% {
@@ -48,6 +49,8 @@
 .advantages-container h2 {
   max-width: 870px;
   margin-bottom: 56px;
+  font-weight: 700;
+  font-size: 32px;
 }
 .advantages-container span {
   background: linear-gradient(135deg, #bc87f6, #4235e5 50%, #bc87f6);
@@ -65,14 +68,72 @@
   line-height: 1.6;
   font-weight: 500;
 }
-.case-box {
-  display: flex;
-  justify-content: center;
-  max-width: 960px;
-  width: 100%;
-  flex-direction: row;
-  gap: 32px;
-  align-items: flex-;
+@media only screen and (min-width: 990px) {
+  .advantages-section {
+    padding: 96px 10px;
+    margin: 96px 0;
+  }
+  .case-box {
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    width: 100%;
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .advantages-container {
+    max-width: 1130px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 56px 85px;
+    border-radius: 32px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .case-box {
+    max-width: 960px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .advantages-container {
+    max-width: 1130px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 32px;
+  }
+  .advantages-container h2 {
+    max-width: 870px;
+    margin-bottom: 56px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+  }
+  .advantages-lists h3 {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin: 16px 0 12px;
+  }
+  .advantages-section {
+    margin: 26px 0;
+    padding: 20px 16px;
+  }
+  .advantages-container p {
+    font-size: 14px;
+  }
 }
 .case-image {
   margin-top: 8px;

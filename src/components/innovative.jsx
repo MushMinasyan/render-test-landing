@@ -66,7 +66,6 @@ export default function Innovative() {
         Our AI Cartoon Generator
       </h2>
       <div className="innovative-container">
-        {/* Левая часть с видео */}
         <div className="innovative-left">
           <div className="innovative-left-div">
             <iframe
@@ -80,7 +79,6 @@ export default function Innovative() {
           </div>
         </div>
 
-        {/* Правая часть с контентом */}
         <div className="innovative-right">
           {contentData.map((item) => (
             <div
