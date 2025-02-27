@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const navItems = [
     {
       label: "Videos",
@@ -65,24 +71,31 @@ const Navbar = () => {
             <img className="logo" src="/download.png" alt="logo" />
           </NavLink>
 
-          {navItems.map((item) => (
-            <div key={item.to} className="dropdown">
-              <NavLink to={item.to} className="navLink">
-                {item.label}
-              </NavLink>
-              <div className="dropdown-content">
-                {item.subItems.map((subItem) => (
-                  <NavLink
-                    key={subItem.to}
-                    to={subItem.to}
-                    className="dropdown-item"
-                  >
-                    {subItem.label}
-                  </NavLink>
-                ))}
+          <div className="hamburger" onClick={toggleMobileMenu}>
+            <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+            <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+          </div>
+
+          <div className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
+            {navItems.map((item) => (
+              <div key={item.to} className="dropdown">
+                <NavLink to={item.to} className="navLink">
+                  {item.label}
+                </NavLink>
+                <div className="dropdown-content">
+                  {item.subItems.map((subItem) => (
+                    <NavLink
+                      key={subItem.to}
+                      to={subItem.to}
+                      className="dropdown-item"
+                    >
+                      {subItem.label}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="end-links">

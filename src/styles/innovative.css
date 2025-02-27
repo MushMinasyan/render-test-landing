@@ -27,9 +27,8 @@
 }
 
 .innovative-left-div {
-  width: 650px;
+  max-width: 650px;
   height: 400px;
-  max-width: 100%;
   position: relative;
   border-radius: 26px;
   border: 7px solid #fff;
@@ -184,7 +183,6 @@
   }
 
   .innovative-left-div {
-    width: 92%;
     height: auto;
   }
 

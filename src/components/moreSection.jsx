@@ -1,44 +1,29 @@
 import React from "react";
 import "../styles/moreSection.css";
+import MoreItem from "./moreItem"; // Импортируем компонент
+
 const MoreSection = () => {
+  const moreItems = [
+    { text: "AI Video Generator", href: "ai-video-generator" },
+    { text: "Cartoon Maker", href: "ai-video-generator" },
+    { text: "AI Business Name Generator", href: "ai-video-generator" },
+    { text: "AI Website Builder", href: "ai-video-generator" },
+    { text: "AI Logo Maker", href: "ai-video-generator" },
+    { text: "Video Maker", href: "ai-video-generator" },
+  ];
+
   return (
     <section className="more-section">
       <div className="more-container">
         <h2>Discover More from Renderforest</h2>
         <div className="more-items">
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>AI Video Generator</p>
-            </a>
-          </div>
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>Cartoon Maker</p>
-            </a>
-          </div>
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>AI Business Name Generator</p>
-            </a>
-          </div>
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>AI Website Builder</p>
-            </a>
-          </div>
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>AI Logo Maker</p>
-            </a>
-          </div>
-          <div className="more-item">
-            <a href="ai-video-generator">
-              <p>Video Maker</p>
-            </a>
-          </div>
+          {moreItems.map((item, index) => (
+            <MoreItem key={index} text={item.text} href={item.href} />
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
 export default MoreSection;
