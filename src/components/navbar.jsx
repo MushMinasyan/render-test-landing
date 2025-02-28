@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isMobile = windowWidth <= 998;
 
   const navItems = [
     {
@@ -79,9 +94,13 @@ const Navbar = () => {
           <div className={`nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
             {navItems.map((item) => (
               <div key={item.to} className="dropdown">
-                <NavLink to={item.to} className="navLink">
-                  {item.label}
-                </NavLink>
+                {isMobile ? (
+                  <p className="navLink">{item.label}</p>
+                ) : (
+                  <NavLink to={item.to} className="navLink">
+                    {item.label}
+                  </NavLink>
+                )}
                 <div className="dropdown-content">
                   {item.subItems.map((subItem) => (
                     <NavLink
