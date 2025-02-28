@@ -5,6 +5,7 @@ import "../styles/Navbar.css";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const body = document.body;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -21,6 +22,18 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      body.classList.add("no-scroll");
+    } else {
+      body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      body.classList.remove("no-scroll");
+    };
+  }, [isMobileMenuOpen]);
 
   const isMobile = windowWidth <= 998;
 
@@ -77,6 +90,10 @@ const Navbar = () => {
       ],
     },
   ];
+
+  const handleOverlayClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="main-header">
@@ -149,6 +166,9 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
+      {isMobileMenuOpen && (
+        <div className="overlay" onClick={handleOverlayClick}></div>
+      )}
     </header>
   );
 };

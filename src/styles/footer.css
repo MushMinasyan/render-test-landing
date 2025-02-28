@@ -8,10 +8,12 @@
   max-width: 1769px;
   padding: 0 14px;
 }
-ul {
-  width: 140px;
-  list-style-type: none;
+
+.links-item {
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .links-item p {
   text-align: start;
   text-transform: capitalize;
@@ -27,6 +29,7 @@ ul {
   position: relative;
   display: inline-block;
 }
+
 .links-item a {
   padding: 9px 0;
   position: relative;
@@ -41,9 +44,15 @@ ul {
   transition: color 0.3s ease;
   white-space: nowrap;
 }
+
 .links-content {
   display: flex;
   flex-direction: column;
+}
+
+.links-content ul {
+  width: 140px;
+  list-style-type: none;
 }
 
 .links-content ul li {
@@ -74,6 +83,7 @@ ul {
 .links-content ul li:hover::after {
   transform: scaleX(1);
 }
+
 .see-more {
   cursor: pointer;
   font-size: 12px;
@@ -81,81 +91,74 @@ ul {
   margin-top: 10px;
   color: #252e48;
 }
+
 .stores-icons-div {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 360px;
 }
-figure {
-  height: 40px;
-  position: relative;
-  width: 132px;
-  cursor: pointer;
-}
+
 .stores-icons-div figure {
   position: relative;
   display: inline-block;
-  width: 150px; /* Размер кнопки */
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
 }
 
 .stores-icons-div figure img:last-child {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; /* Скрываем второе изображение */
+  opacity: 0;
 }
 
 .stores-icons-div figure:hover img:last-child {
-  opacity: 1; /* Показываем при наведении */
+  opacity: 1;
 }
 
 .stores-icons-div figure:hover img:first-child {
-  opacity: 0; /* Скрываем первое изображение */
+  opacity: 0;
 }
+
 footer {
   background-color: #faf8f4;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.links-item {
-  display: flex;
-  flex-wrap: wrap; /* Для корректного отображения на больших экранах */
-}
 
 .first-column,
 .second-column {
-  flex: 1; /* Равномерное распределение пространства */
+  flex: 1;
 }
+
 @media only screen and (min-width: 600px) {
   .links-item {
     gap: 150px;
     margin-bottom: 10px;
     padding: 0 8px;
-    display: flex;
     align-items: flex-start;
     flex-direction: row;
     box-sizing: border-box;
     text-align: initial;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .footer-navigation {
     padding: 0;
     column-gap: 32px;
     grid-template-columns: repeat(auto-fill, 152px);
   }
+
   .links-item {
     justify-content: space-around;
-
-    display: flex;
-    flex-wrap: wrap;
   }
-  ul {
-    width: 140px;
+
+  .links-content ul {
     display: flex;
-    list-style-type: none;
     flex-direction: column;
   }
 }

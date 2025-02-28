@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "../styles/App.css";
 import "../styles/media.css";
 import ImageSelector from "./imageSelector";
@@ -16,6 +16,23 @@ export default function Hero() {
 
     loadMedia();
   }, []);
+
+  const videoElement = useMemo(
+    () => (
+      <div className="video">
+        <video
+          src={videoSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          key={videoSrc}
+        />
+      </div>
+    ),
+    [videoSrc]
+  );
 
   return (
     <section className="hero-section">
@@ -50,17 +67,7 @@ export default function Hero() {
               <ImageSelector images={media} onImageSelect={setVideoSrc} />
               <div className="video-container">
                 <h3>Find Your Cartoon Character</h3>
-                <div className="video">
-                  <video
-                    src={videoSrc}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    key={videoSrc}
-                  />
-                </div>
+                {videoElement}
                 <a href="https://www.renderforest.com/project/ai-video">
                   Create AI Cartoon
                 </a>
@@ -83,23 +90,28 @@ export default function Hero() {
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fstanford-logo.webp&w=256&q=75"
             alt="img1"
+            loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fmeta-logo.webp&w=256&q=75"
             alt="img2"
+            loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fbooking-logo.webp&w=256&q=75"
             alt="img3"
+            loading="lazy"
           />
           <img
             className="trusted-image4"
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fnike-logo.webp&w=128&q=75"
             alt="img4"
+            loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fhootsuite-logo.webp&w=256&q=75"
             alt="img5"
+            loading="lazy"
           />
         </div>
       </section>

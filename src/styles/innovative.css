@@ -133,7 +133,11 @@
 }
 
 /* desktop */
-@media (min-width: 993px) {
+@media only screen and (min-width: 993px) {
+  .innovative-left-div iframe {
+    width: 600px;
+    height: 100%;
+  }
   .innovative-left-div::before {
     content: "";
     position: absolute;
@@ -199,8 +203,8 @@
   }
 
   .innovative-box {
-    width: 100%; /* innovative box width 100%*/
-    flex-direction: column; /* innovative box column*/
+    width: 100%;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
   }

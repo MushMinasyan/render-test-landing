@@ -5,7 +5,6 @@ const FaqSection = () => {
   const [activeIds, setActiveIds] = useState([]);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Функция открытия/закрытия вопросов
   const toggleBox = (id) => {
     setActiveIds((prevActiveIds) =>
       prevActiveIds.includes(id)
@@ -14,7 +13,6 @@ const FaqSection = () => {
     );
   };
 
-  // Следим за скроллом, чтобы менять стиль заголовка
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -41,7 +39,7 @@ const FaqSection = () => {
       id: 3,
       question: "How does the AI Cartoon Generator work?",
       answer:
-        "Our AI cartoon creator uses advanced algorithms to convert written prompts into animated cartoons. Users input their concepts and the AI analyzes the description to generate an outline or storyboard. This outline can be customized to better fit the user’s vision. The AI then creates the animation based on the refined outline, and users can add final touches such as music, transitions, and voiceovers before exporting and sharing.",
+        "Our AI cartoon creator uses advanced algorithms to convert written prompts into animated cartoons. Users input their concepts and the AI analyzes the description to generate an outline or storyboard. This outline can be customized to better fit the user’s vision. The AI then creates the animation based on the refined outline, and users can add final touches such as music, transitions, and voice overs before exporting and sharing.",
     },
     {
       id: 4,
