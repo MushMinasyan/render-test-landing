@@ -310,7 +310,6 @@
 
 .trusted-images img {
   height: 60px;
-  aspect-ratio: 123 / 60;
 }
 
 .image-selector {

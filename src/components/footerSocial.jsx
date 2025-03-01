@@ -113,7 +113,7 @@ const FooterSocial = () => {
                 data-name="Mask"
               ></path>
               <g
-                clip-path="url(#linkedin_svg__a)"
+                clipPath="url(#linkedin_svg__a)"
                 data-name="Mask Group 29"
                 transform="translate(-2 -2.4)"
               >
