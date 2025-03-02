@@ -1,37 +1,17 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 import "../styles/media.css";
 import ImageSelector from "./imageSelector";
+import mediaData from "./imagesData";
 
 export default function Hero() {
-  const [media, setMedia] = useState([]);
-  const [videoSrc, setVideoSrc] = useState(null);
+  const [videoSrc, setVideoSrc] = useState(mediaData[0]?.video || null);
 
-  useEffect(() => {
-    const loadMedia = async () => {
-      const mediaModule = await import("./imagesData");
-      setMedia(mediaModule.default);
-      setVideoSrc(mediaModule.default[0]?.video || "");
-    };
-
-    loadMedia();
-  }, []);
-
-  const videoElement = useMemo(
-    () => (
-      <div className="video">
-        <video
-          src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          key={videoSrc}
-        />
-      </div>
-    ),
-    [videoSrc]
+  // Простой видео компонент без мемоизации
+  const VideoPlayer = ({ src }) => (
+    <div className="video">
+      <video src={src} autoPlay loop muted playsInline />
+    </div>
   );
 
   return (
@@ -55,27 +35,21 @@ export default function Hero() {
                 placeholder="Describe your video topic"
                 className="hero-form-input"
               />
-              <button className="hero-button" aria-label="Primary Button">
+              <button className="hero-button">
                 <span>Create AI Cartoon</span>
               </button>
             </div>
           </div>
         </div>
         <div className="right-content">
-          {media.length > 0 ? (
-            <>
-              <ImageSelector images={media} onImageSelect={setVideoSrc} />
-              <div className="video-container">
-                <h3>Find Your Cartoon Character</h3>
-                {videoElement}
-                <a href="https://www.renderforest.com/project/ai-video">
-                  Create AI Cartoon
-                </a>
-              </div>
-            </>
-          ) : (
-            <p>Loading media...</p>
-          )}
+          <ImageSelector images={mediaData} onImageSelect={setVideoSrc} />
+          <div className="video-container">
+            <h3>Find Your Cartoon Character</h3>
+            <VideoPlayer src={videoSrc} />
+            <a href="https://www.renderforest.com/project/ai-video">
+              Create AI Cartoon
+            </a>
+          </div>
         </div>
       </div>
       <section className="trusted">
@@ -89,28 +63,27 @@ export default function Hero() {
         <div className="trusted-images">
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fstanford-logo.webp&w=256&q=75"
-            alt="img1"
+            alt="Stanford"
             loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fmeta-logo.webp&w=256&q=75"
-            alt="img2"
+            alt="Meta"
             loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fbooking-logo.webp&w=256&q=75"
-            alt="img3"
+            alt="Booking"
             loading="lazy"
           />
           <img
-            className="trusted-image4"
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fnike-logo.webp&w=128&q=75"
-            alt="img4"
+            alt="Nike"
             loading="lazy"
           />
           <img
             src="https://www.renderforest.com/landing-assets/_next/image?url=https%3A%2F%2Fstatic.rfstat.com%2Frenderforest%2Fimages%2Fv2%2Flanding-pics%2Fhootsuite-logo.webp&w=256&q=75"
-            alt="img5"
+            alt="Hootsuite"
             loading="lazy"
           />
         </div>
