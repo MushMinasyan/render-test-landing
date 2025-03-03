@@ -88,13 +88,13 @@ const GenerateSection = () => {
               </div>
             </div>
           ))}
-          <a
-            className="link-primary-button"
-            href="https://www.renderforest.com/project/ai-video"
-          >
-            Create AI Cartoons
-          </a>
         </div>
+        <a
+          className="link-primary-button"
+          href="https://www.renderforest.com/project/ai-video"
+        >
+          Create AI Cartoons
+        </a>
       </div>
     </section>
   );

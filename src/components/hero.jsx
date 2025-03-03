@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/App.css";
 import "../styles/media.css";
 import ImageSelector from "./imageSelector";
@@ -6,13 +6,6 @@ import mediaData from "./imagesData";
 
 export default function Hero() {
   const [videoSrc, setVideoSrc] = useState(mediaData[0]?.video || null);
-
-  // Простой видео компонент без мемоизации
-  const VideoPlayer = ({ src }) => (
-    <div className="video">
-      <video src={src} autoPlay loop muted playsInline />
-    </div>
-  );
 
   return (
     <section className="hero-section">
@@ -35,17 +28,22 @@ export default function Hero() {
                 placeholder="Describe your video topic"
                 className="hero-form-input"
               />
-              <button className="hero-button">
+              <button className="hero-button desktop-button">
                 <span>Create AI Cartoon</span>
               </button>
             </div>
+            <button className="hero-button mobile-button">
+              <span>Create AI Cartoon</span>
+            </button>
           </div>
         </div>
         <div className="right-content">
           <ImageSelector images={mediaData} onImageSelect={setVideoSrc} />
           <div className="video-container">
             <h3>Find Your Cartoon Character</h3>
-            <VideoPlayer src={videoSrc} />
+            <div className="video">
+              <video src={videoSrc} autoPlay loop muted playsInline />
+            </div>
             <a href="https://www.renderforest.com/project/ai-video">
               Create AI Cartoon
             </a>

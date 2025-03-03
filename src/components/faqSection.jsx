@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/faqSection.css";
 
 const FaqSection = () => {
   const [activeIds, setActiveIds] = useState([]);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleBox = (id) => {
     setActiveIds((prevActiveIds) =>
@@ -12,15 +11,6 @@ const FaqSection = () => {
         : [...prevActiveIds, id]
     );
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const faqItems = [
     {
@@ -39,7 +29,7 @@ const FaqSection = () => {
       id: 3,
       question: "How does the AI Cartoon Generator work?",
       answer:
-        "Our AI cartoon creator uses advanced algorithms to convert written prompts into animated cartoons. Users input their concepts and the AI analyzes the description to generate an outline or storyboard. This outline can be customized to better fit the user’s vision. The AI then creates the animation based on the refined outline, and users can add final touches such as music, transitions, and voice overs before exporting and sharing.",
+        "Our AI cartoon creator uses advanced algorithms to convert written prompts into animated cartoons. Users input their concepts and the AI analyzes the description to generate an outline or storyboard. This outline can be customized to better fit the user's vision. The AI then creates the animation based on the refined outline, and users can add final touches such as music, transitions, and voice overs before exporting and sharing.",
     },
     {
       id: 4,
@@ -59,7 +49,7 @@ const FaqSection = () => {
   return (
     <section className="faq-section">
       <div className="faq-container">
-        <div className={`heading ${isScrolled ? "scroll-active" : ""}`}>
+        <div className="heading">
           <h2 className="h2">
             All Your
             <span> AI Cartoon </span>

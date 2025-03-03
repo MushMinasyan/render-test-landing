@@ -1,5 +1,4 @@
-/* page 10 */
-
+/* Layout */
 .faq-section {
   padding: 48px 10px;
 }
@@ -7,17 +6,15 @@
 .faq-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   padding: 0 16px 24px;
   width: 100%;
   max-width: 1560px;
   margin: 0 auto;
-  height: auto;
 }
 
+/* Heading */
 .heading {
-  background-color: white;
+  background-color: #fff;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -41,8 +38,11 @@
   animation: shine 4s linear infinite 1s;
 }
 
-.scroll-active {
-  transform: scale(0.9) translateY(-10px);
+/* FAQ Items */
+.faq-question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .faq-item {
@@ -55,16 +55,18 @@
   gap: 16px;
 }
 
+.faqItem-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 18px;
+  width: 100%;
+}
+
 .faq-item h3 {
   font-weight: 700;
   line-height: 1.6;
   padding-bottom: 15px;
-}
-
-.faq-question {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .faq-item img {
@@ -77,14 +79,7 @@
   transform: rotate(180deg);
 }
 
-.faqItem-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-size: 18px;
-  width: 100%;
-}
-
+/* FAQ Text */
 .faqItem-text {
   max-height: 0;
   overflow: hidden;
@@ -103,19 +98,12 @@
   max-width: 500px;
 }
 
-.faq-item.active {
-  width: 100%;
-}
-
+/* Desktop Styles */
 @media only screen and (min-width: 992px) {
-  .faq-section {
-    padding: 48px 10px;
-  }
-
   .faq-container {
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 72px;
   }
 
@@ -127,9 +115,22 @@
   .faq-item {
     max-width: 664px;
   }
+
+  .scroll-active {
+    transform: scale(0.9) translateY(-10px);
+  }
 }
 
+/* Mobile Styles */
 @media only screen and (max-width: 992px) {
+  .faq-item {
+    width: 90%;
+  }
+  .faq-question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .heading h2 {
     font-size: 24px;
     text-align: center;
@@ -142,5 +143,87 @@
   .faq-item h3 {
     font-size: 16px;
     line-height: 1.3;
+  }
+  .heading {
+    top: auto;
+  }
+}
+
+/* Scroll Effects */
+@media screen and (min-width: 769px) {
+  .heading {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .heading:hover {
+    opacity: 0.7;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Добавляем Intersection Observer через CSS */
+@media (min-width: 769px) {
+  .heading {
+    view-timeline-name: --reveal;
+    view-timeline-axis: block;
+    animation: reveal linear both;
+    animation-timeline: --reveal;
+    animation-range: entry 25% cover 50%;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Скролл эффект только для десктопа */
+@media screen and (min-width: 769px) {
+  .scroll-observe {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  .scroll-observe.scroll-active {
+    opacity: 0.7;
+  }
+  .heading {
+    view-timeline-name: --reveal;
+    view-timeline-axis: block;
+    animation: reveallinear both;
+    animation-timeline: --reveal;
+    animation-range: entry 25% cover 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Отключаем все эффекты скролла для мобильных */
+@media screen and (max-width: 768px) {
+  .heading {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

@@ -183,7 +183,10 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 998px) {
+  .link-primary-button {
+    margin-top: 5px;
+  }
   .generate-box {
     padding: 32px 22px;
     width: 100%;
@@ -205,9 +208,6 @@
     flex-direction: column;
     border-radius: 16px;
     width: 100%;
-  }
-  .generate-box8 {
-    margin-bottom: 75px;
   }
 
   .generate-box p {

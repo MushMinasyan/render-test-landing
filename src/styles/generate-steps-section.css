@@ -1,6 +1,6 @@
 /* page 2 */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 998px) {
   video {
     display: none !important;
   }
@@ -96,7 +96,7 @@
   line-height: 1.6;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 998px) {
   .step-one .generate-step-box::before {
     right: 0;
     content: "";
@@ -146,7 +146,7 @@
 .step-two .generate-box-number {
   background-color: #f0a8f7;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 998px) {
   .step-two .generate-step-box::before {
     left: 0;
     content: "";
