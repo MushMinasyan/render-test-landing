@@ -99,7 +99,7 @@ const aiTools = [
 const LinksContent = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const halfLength = Math.ceil(videoTools.links.length / 2); // Половина списка
+  const halfLength = Math.ceil(videoTools.links.length / 2);
   const visibleLinks = showAll
     ? videoTools.links
     : videoTools.links.slice(0, halfLength);
@@ -159,11 +159,14 @@ const LinksContent = () => {
               </li>
             ))}
           </ul>
-          {!showAll ? (
-            <span onClick={() => setShowAll(true)} className="see-more">
+          {!showAll && (
+            <span
+              onClick={() => setShowAll(true)}
+              className="see-more desktop-only"
+            >
               See More
             </span>
-          ) : null}
+          )}
         </div>
         {/* Пятый блок - AI Tools */}
         {aiTools.map((section, index) => (

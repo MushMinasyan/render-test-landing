@@ -9,7 +9,6 @@ import Innovative from "../components/innovative";
 import Review from "../components/review";
 import MoreSection from "../components/moreSection";
 import FaqSection from "../components/faqSection";
-import "../styles/media.css";
 import "../styles/App.css";
 const CartonGenerator = () => {
   return (

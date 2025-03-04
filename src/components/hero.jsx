@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/App.css";
-import "../styles/media.css";
 import ImageSelector from "./imageSelector";
 import mediaData from "./imagesData";
 
